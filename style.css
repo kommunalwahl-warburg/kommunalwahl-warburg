@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #F1EBD2;
+  color: #000000;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #FAF8EF;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  background-color: #788AA3;
+  color: #E8DDB5;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #666A86;
+}
+
+.answer {
+  background: #B2C9AB;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #92B6B1;
+  transition: background 0.2s;
+}
+
+.answer:hover {
+  background: #e2e6ea;
+}
+
+.answer.selected {
+  background: #788AA3;
+  border-color: #666A86;
+}
+
+.kandidat-box {
+  border: 1px solid #E8DDB5;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.kandidat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #FAF8EF;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pfeil {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.kandidat-details {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  background-color: #FAF8EF;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.kandidat-details.show {
+  padding: 10px;
+  max-height: 1000px; /* groß genug für alle Inhalte */
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
