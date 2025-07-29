@@ -1,21 +1,48 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #F1EBD2;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #F1EBD2, #D9E2C8, #FAF8EF);
+  background-size: 300% 300%;
   color: #000000;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   max-width: 600px;
-  margin: 0 auto;
-  background: #FAF8EF;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #FAF8EF, #f0ebd6);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.fade {
+  animation: fadeIn 0.4s ease forwards;
 }
 
 h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#start h1, #start .beschreibung {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeSlideIn 0.6s forwards;
+}
+
+#start .beschreibung {
+  animation-delay: 0.3s;
 }
 
 button {
@@ -26,21 +53,66 @@ button {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background 0.2s;
+  margin: 20px auto 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
   background-color: #666A86;
 }
 
+button:disabled {
+  background-color: #ccc !important;
+  cursor: default;
+  color: #666;
+}
+
+#startBtn {
+  background-color: #788AA3;
+  color: #E8DDB5;
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(120, 138, 163, 0.5);
+  animation: pulse 2.5s infinite;
+}
+
+#startBtn:hover {
+  background-color: #5a6a82;
+  transform: scale(1.05);
+  animation: none;
+}
+
+.beschreibung {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .answer {
   background: #B2C9AB;
-  padding: 15px;
+  padding: 12px 16px;
   border-radius: 8px;
   margin-bottom: 15px;
-  border: 1px solid #92B6B1;
-  transition: background 0.2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  min-width: 120px;
+}
+
+.antworten-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .answer:hover {
@@ -50,6 +122,60 @@ button:hover {
 .answer.selected {
   background: #788AA3;
   border-color: #666A86;
+}
+
+#fragebereich > h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+#fragebereich .answer {
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 2px solid #e8e8e8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#fragebereich .answer:hover {
+  background-color: #eee;
+}
+
+#fragebereich .answer.selected {
+  border-color: #008cba;
+  background-color: #d0ecf9;
+}
+
+#progress-container {
+  position: relative;
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 10px;
+  height: 12px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #788AA3;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.3s ease;
+}
+
+#progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 12px;
+  color: #333;
+  user-select: none; /* Verhindert das Markieren des Textes */
 }
 
 .kandidat-box {
@@ -88,6 +214,26 @@ button:hover {
   max-height: 1000px; /* groß genug für alle Inhalte */
 }
 
+.start-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #start {
+    text-align: center;
+  }
+
+  #startBtn {
+    text-align: center;
+    width: 30%;
+  }
+
+  .start-button-wrapper {
+    justify-content: center;
+  }
+}
 
 @media (max-width: 600px) {
   .container {
@@ -99,3 +245,25 @@ button:hover {
   }
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(120, 138, 163, 0.5);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(120, 138, 163, 0.8);
+  }
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
