@@ -118,8 +118,7 @@ button:disabled {
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
-  min-width: 120px;
+  text-align: left;
 }
 
 .antworten-grid {
@@ -192,6 +191,10 @@ button:disabled {
   user-select: none; /* Verhindert das Markieren des Textes */
 }
 
+.frageBox .pfeil {
+  transition: transform 0.3s ease;
+}
+
 .kandidat-box {
   border: 1px solid #E8DDB5;
   border-radius: 8px;
@@ -225,7 +228,86 @@ button:disabled {
 
 .kandidat-details.show {
   padding: 10px;
-  max-height: 1000px; /* groß genug für alle Inhalte */
+  max-height: 10000px; /* groß genug, damit alles reinpasst */
+}
+
+.kandidat-profil {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.kandidat-bild {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.kandidat-text {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.profil-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0 10px;
+}
+
+.profil-box.show {
+  max-height: 1000px; /* groß genug für Profiltext + Bild */
+  padding: 10px;
+}
+
+.profil-header {
+  cursor: pointer;
+  background-color: #f5f5f5;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profil-header:hover {
+  background-color: #eee;
+}
+
+.frage-antwort,
+.profil-details {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 10px;
+  background-color: #FAF8EF;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.frage-antwort.show,
+.profil-details.show {
+  padding: 10px;
+}
+
+.frage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #f5f5f5;
+  margin-top: 5px;
+  border-radius: 6px;
+}
+
+.frage-header:hover {
+  background-color: #eee;
 }
 
 .start-button-wrapper {
