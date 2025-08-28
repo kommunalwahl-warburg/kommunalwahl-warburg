@@ -418,9 +418,11 @@ function toggleAntwort(id) {
 
   if (antwortDiv.classList.contains("show")) {
     antwortDiv.classList.remove("show");
+    antwortDiv.style.maxHeight = null;
     pfeil.style.transform = "rotate(0deg)";
   } else {
     antwortDiv.classList.add("show");
+    antwortDiv.style.maxHeight = antwortDiv.scrollHeight + "px"; // Dynamisch
     pfeil.style.transform = "rotate(90deg)";
   }
 }
