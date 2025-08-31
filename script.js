@@ -339,7 +339,6 @@ function zeigeErgebnis() {
       </div>
       <div class="profil-box" id="${profilId}">
         <div class="kandidat-profil">
-          <img src="${kandidatenInfos[kandidat].bild}" alt="${kandidatenInfos[kandidat].name}" class="kandidat-bild">
           <div class="kandidat-text">
             <strong>${kandidatenInfos[kandidat].name}</strong><br />
             ${kandidatenInfos[kandidat].beschreibung}
