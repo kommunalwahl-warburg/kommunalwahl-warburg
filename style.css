@@ -81,6 +81,23 @@ button:disabled {
   color: #666;
 }
 
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 300px;   /* Größe anpassen */
+  height: auto;
+  margin-top: 35px;
+}
+
 #startBtn {
   background-color: #788AA3;
   color: #E8DDB5;

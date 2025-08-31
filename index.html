@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>Kommunalwahl Warburg</h1>
   <div class="container" id="start">
-    <h1>Kommunalwahl Warburg</h1>
+    <h1>Willkommen!</h1>
     <p class="beschreibung">
-      Willkommen! Hier kannst du deine Meinung zu verschiedenen kommunalen Themen mit den Positionen der Kandidaten vergleichen.
+      Hier kannst du deine Meinung zu verschiedenen kommunalen Themen mit den Positionen der Kandidaten vergleichen. Alle Antworten sind ungekürzt und Wort für Wort übernommen.
     </p>
     <button id="startBtn">Start</button>
   </div>
@@ -33,6 +34,9 @@
   </div>
   <div class="container" id="ergebnis" style="display: none;">
     <h2>Ergebnis</h2>
+    <p class="beschreibung">
+      Durch einen Klick auf die Pfeile können die Boxen ausgeklappt werden.
+    </p>
     <div id="ergebnisListe"></div>
   </div>
   <div id="kandidatenInfos" style="display:none;">
@@ -100,9 +104,14 @@
   </div>
 </div>
   <script src="script.js"></script>
-  <footer style="text-align: center; margin-top: 50px; font-size: 14px;">
+  <footer class="footer">
+  <div class="footer-links">
     <a href="impressum.html">Impressum</a> | 
     <a href="datenschutz.html">Datenschutzerklärung</a>
-  </footer>
+  </div>
+  <div class="footer-logo">
+    <img src="logo.png" alt="Logo" />
+  </div>
+</footer>
 </body>
 </html>
