@@ -194,6 +194,11 @@ function zeigeFrage() {
   frageText.textContent = frage.text;
   fragebereich.appendChild(frageText);
 
+  const infoText = document.createElement("p");
+  infoText.classList.add("antwort-hinweis");
+  infoText.textContent = "Das sind die Antworten der Kandidaten – bitte wähle die, die dir am meisten zusagt.";
+  fragebereich.appendChild(infoText);
+
   // Kandidatenantworten als Array erzeugen
   let antwortArray = Object.entries(frage.antworten);
 

@@ -40,7 +40,7 @@ body {
 
 h1 {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #333;
   text-align: center;
 }
@@ -168,8 +168,10 @@ button:disabled {
 
 #fragebereich > h2 {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #444;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd; /* Trennlinie */
 }
 
 #fragebereich .answer {
@@ -180,6 +182,21 @@ button:disabled {
   border: 2px solid #e8e8e8;
   cursor: pointer;
   transition: all 0.2s ease;
+  position: relative;
+}
+
+#fragebereich .answer:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -8px; /* Abstand nach unten */
+  height: 2px;
+  background-color: #b3b3b3; /* Trennlinie */
+}
+
+#fragebereich .answer:last-child {
+  border-bottom: none;
 }
 
 #fragebereich .answer:hover {
@@ -222,6 +239,14 @@ button:disabled {
 
 .frageBox .pfeil {
   transition: transform 0.3s ease;
+}
+
+.antwort-hinweis {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0 15px 0;
+  font-style: italic;
+  text-align: center;
 }
 
 .kandidat-box {
