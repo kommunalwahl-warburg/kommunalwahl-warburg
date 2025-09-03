@@ -147,6 +147,7 @@ document.querySelectorAll("#kandidatenInfos div").forEach(el => {
   const kandidat = el.dataset.kandidat;
   kandidatenInfos[kandidat] = {
     name: kandidat,
+    bild: el.dataset.bild,
     beschreibung: el.querySelector(".beschreibung")?.innerHTML || ""
   };
 });
@@ -343,6 +344,7 @@ function zeigeErgebnis() {
       </div>
       <div class="profil-box" id="${profilId}">
         <div class="kandidat-profil">
+          <img src="${kandidatenInfos[kandidat].bild}" alt="${kandidatenInfos[kandidat].name}" class="kandidat-bild">
           <div class="kandidat-text">
             <strong>${kandidatenInfos[kandidat].name}</strong><br />
             ${kandidatenInfos[kandidat].beschreibung}
